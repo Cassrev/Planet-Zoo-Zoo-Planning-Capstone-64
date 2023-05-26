@@ -1,0 +1,45 @@
+{
+    "accounts": [
+        {
+        "userName": "",
+        "profileIcon": "",
+        "password": ""
+        }
+    ],
+
+    "gameModes": [
+        {
+            "id": 1,
+            "mode": "Free Build"
+        },
+        {
+            "id": 2,
+            "mode":"Franchise"
+        }
+    ],
+
+    "maps": [
+        {
+            "id": 1,
+            "type": "Tropical"
+        },
+        {
+            "id": 2,
+            "type": "Desert"
+        },
+        {
+            "id": 3,
+            "type": "Temperate"
+        },
+        {
+            "id": 4,
+            "type": "Tundra"
+        },
+        {
+            "id": 5,
+            "type": "Taiga"
+        }
+    ],
+
+    "choices": []
+}
