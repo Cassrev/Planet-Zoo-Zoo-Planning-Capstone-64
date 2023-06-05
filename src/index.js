@@ -1,18 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom"
-import './index.css';
-import PlanetZooApp from './PZApp';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from "react-dom/client" // Importing the 'createRoot' function
+import "./index.css" // Importing the 'index.css' file
+import { BrowserRouter } from "react-router-dom" // Importing the 'BrowserRouter' component
+import { PlanetZooApp } from "./components/PZApp"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-		<PlanetZooApp />
+const container = document.getElementById("root") // Getting the root element
+const root = createRoot(container) // Creating a root using the 'container' element
+
+root.render( // Rendering JSX code inside the root element
+	<BrowserRouter> {/*Wrapping the component inside 'BrowserRouter'*/}
+		<PlanetZooApp /> {/*Rendering the 'Repairs' component */}
 	</BrowserRouter>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+)
