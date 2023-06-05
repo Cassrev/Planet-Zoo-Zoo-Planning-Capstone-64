@@ -15,7 +15,7 @@ export const Register = (props) => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(customer)
+            body: JSON.stringify(user)
         })
             .then(res => res.json())
             .then(createdUser => {

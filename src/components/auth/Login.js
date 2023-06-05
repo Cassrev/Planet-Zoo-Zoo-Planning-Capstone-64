@@ -1,11 +1,22 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
+import { PlanningToggle } from "../WelcomePage/StartPlanningToggle/toggleElement";
 
 // Go over to make sure it works
 export const Login = () => {
-	const [userName, passWord] = useState("")
+	const [userName, setUserName] = useState("")
+	const [passWord, setPassword] = useState("")
+	const [isShown, setIsShown] = useState(false);
 	const navigate = useNavigate()
+
+	const handleClick = (event) => {
+		// 👇️ toggle shown state
+		setIsShown(current => !current);
+
+		// 👇️ or simply set it to true
+		// setIsShown(true);
+	};
 
 	const handleLogin = (e) => {
 		e.preventDefault()
@@ -20,7 +31,7 @@ export const Login = () => {
 							id: user.id,
 							passWord: user.password
 						}
-						
+
 						localStorage.setItem("sitePZ_user", JSON.stringify(userState))
 
 						navigate("/")
@@ -38,41 +49,47 @@ export const Login = () => {
 				}
 			)
 	}
-return (
-    <>
-    <main className="container--login">
-			<section>
-				<form className="form--login" onSubmit={handleLogin}>
-					<fieldset>
-						<label htmlFor="inputUserName"> Account Name </label>
-						<input type="username"
-							value={userName}
-							onChange={evt => set(evt.target.value)}
-							className="form-control"
-							placeholder="Username"
-							required autoFocus />
-					</fieldset>
-					<fieldset>
-						<label htmlFor="inputPassword"> Password </label>
-						<input type="password"
-							value={passWord}
-							onChange={evt => set(evt.target.value)}
-							className="form-control"
-							placeholder="Password"
-							required autoFocus />
-					</fieldset>
+	return (<>
+		<div className="buttonPlanningToggle"><button className="StartPlanningButton" onClick={handleClick}>Start Planning</button></div>
+		<main className='toggle--container'>
+			{isShown && (
+				<div className="container--login">
+					<section>
+						<form className="form--login" onSubmit={handleLogin}>
+							<fieldset>
+								<label htmlFor="inputUserName"> Account Name </label>
+								<input type="username"
+									value={userName}
+									onChange={evt => setUserName(evt.target.value)}
+									className="form-control"
+									placeholder="Username"
+									required autoFocus />
+							</fieldset>
+							<fieldset>
+								<label htmlFor="inputPassword"> Password </label>
+								<input type="password"
+									value={passWord}
+									onChange={evt => setPassword(evt.target.value)}
+									className="form-control"
+									placeholder="Password"
+									required autoFocus />
+							</fieldset>
 
-					<fieldset>
-						<button className="arrowButton" type="submit">
-							Log in
-						</button>
-					</fieldset>
-				</form>
-			</section>
-			<section className="link--register">
-                <Link to="/register">Create your account</Link>
-            </section>
+							<fieldset>
+								<button className="arrowButton" type="submit">
+									Log in
+								</button>
+							</fieldset>
+						</form>
+					</section>
+				</div>)}
+			{isShown && (
+				<section className="link--register">
+					{/* Link to the registration page */}
+					<Link to="/register">Create your account</Link>
+				</section>
+			)}
 		</main>
-    </>
-)
+	</>
+	)
 }

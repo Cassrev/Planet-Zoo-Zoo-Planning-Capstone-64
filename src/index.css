@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/703080/7d3f53a6aa8b4762af80d014a67061ca7cd5f610.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {
