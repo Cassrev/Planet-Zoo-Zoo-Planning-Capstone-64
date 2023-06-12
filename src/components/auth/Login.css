@@ -1,14 +1,20 @@
 fieldset {
+    display: flex;
+    justify-content: center;
+        align-items: center;
     min-width: 0;
     padding: 1rem 0;
     margin: 0;
     border: 0;
+    
 }
 
 .buttonPlanningToggle {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 35px;
+    padding-bottom: 50px;
 }
 
 .StartPlanningButton {
@@ -17,44 +23,76 @@ fieldset {
     align-items: center;
 }
 
-.toggle--container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card{
+
+  width: 400px;
+  border:none;
+
 }
 
-.form--login>fieldset>input[type="email"] {
-    width: 25em;
+.btr {
+
+  border-top-right-radius: 5px !important;
 }
 
-.label--login {
-    width: 8rem;
-    display: inline-block;
+
+.btl{
+
+  border-top-left-radius: 5px !important;
 }
 
-.form-control {
-    display: block;
-    width: 94%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+.btn-dark {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
 }
 
-.form--login {
-    background-position-x: right;
-    z-index: 1;
-    min-height: 15rem;
-    min-width: 35rem;
-    background-color: rgba(98, 201, 149, 0.432);
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
+
+.btn-dark:hover {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+
+.nav-pills{
+
+  display:table !important;
+  width:100%;
+}
+
+.nav-pills .nav-link {
+    border-radius: 0px;
+        border-bottom: 1px solid #0d6efd40;
+
+}
+
+.nav-item{
+      display: table-cell;
+       background: #0d6efd2e;
+}
+
+
+.form{
+
+  padding: 10px;
+      height: 300px;
+}
+
+.form input{
+
+  margin-bottom: 12px;
+  border-radius: 3px;
+}
+
+
+.form input:focus{
+
+  box-shadow: none;
+}
+
+
+.form button{
+
+  margin-top: 20px;
 }

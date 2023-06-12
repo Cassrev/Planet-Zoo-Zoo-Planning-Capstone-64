@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
-import { PlanningToggle } from "../WelcomePage/StartPlanningToggle/toggleElement";
 
 // Go over to make sure it works
 export const Login = () => {
@@ -21,7 +20,7 @@ export const Login = () => {
 	const handleLogin = (e) => {
 		e.preventDefault()
 
-		return fetch(`http://localhost:8088/users?userName=${userName}`)
+		return fetch(`http://localhost:8088/accounts?userName=${userName}`)
 			.then(res => res.json())
 			.then(
 				foundUsers => {
@@ -34,24 +33,21 @@ export const Login = () => {
 
 						localStorage.setItem("sitePZ_user", JSON.stringify(userState))
 
-						navigate("/")
+						navigate("/goal")
 					}
 					else {
-						const user = foundUsers[0]
-						const userState = {
-							id: user.id,
-							passWord: user.password
-						}
-						localStorage.setItem("sitePZ_user", JSON.stringify(userState))
-
-						navigate("/")
+						// If no user is found with the entered email, display an error message
+						window.alert("Invalid login");
 					}
 				}
 			)
 	}
-	return (<>
+	return (<><div className="toggleMain">
 		<div className="buttonPlanningToggle"><button className="StartPlanningButton" onClick={handleClick}>Start Planning</button></div>
-		<main className='toggle--container'>
+	
+
+
+		<div className='toggle--container'>
 			{isShown && (
 				<div className="container--login">
 					<section>
@@ -89,7 +85,8 @@ export const Login = () => {
 					<Link to="/register">Create your account</Link>
 				</section>
 			)}
-		</main>
+		</div>
+		</div>
 	</>
 	)
 }

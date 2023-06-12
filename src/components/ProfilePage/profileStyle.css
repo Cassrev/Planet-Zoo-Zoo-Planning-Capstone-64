@@ -1,0 +1,34 @@
+/* styles.css */
+
+.theVh {
+    height: 85vh;
+}
+
+.section-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.card {
+    border-radius: 15px;
+    background-color: rgba(66, 122, 83, 0.671);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.row {
+    justify-content: center;
+}
