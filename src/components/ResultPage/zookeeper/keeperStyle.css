@@ -1,0 +1,26 @@
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.keeperImage {
+    max-width: 15%;
+}
+
+.speech-bubble {
+    position: absolute;
+    top: 30%;
+    left: calc(7% + 65px);
+    /* Adjust the distance from the image */
+    transform: translateY(-50%);
+    background-color: #ffffff49;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.speech-bubble-text {
+    display: block;
+    font-size: 14px;
+}
