@@ -1,0 +1,136 @@
+.btn-dark-custom {
+  color: #fff !important;
+  background-color: #51fd0d !important;
+  border-color: #0d6efd !important;
+}
+
+.btn-dark-custom:hover {
+  color: #fff !important;
+  background-color: #71c08b !important;
+  border-color: #0d6efd !important;
+}
+
+.nav-pills-custom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-item-custom {
+  border-radius: 30px !important;
+  background: #4ab6659d !important;
+  padding: 8px 16px !important;
+  margin-right: 8px !important;
+}
+.nav-item-custom:active {
+  border-radius: 30px !important;
+  background: #ff3021 !important;
+  padding: 8px 16px !important;
+  margin-right: 8px !important;
+}
+
+.custom-link {
+  color: #b0ffa0 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease-in-out !important;
+  
+}
+
+.custom-link:hover {
+  color: #0592fd !important;
+}
+
+.form-custom {
+  padding: 10px !important;
+  height: 300px !important;
+}
+
+.form-custom input {
+  margin-bottom: 12px !important;
+  border-radius: 3px !important;
+  border: 1px solid #ccc !important;
+  padding: 8px !important;
+}
+
+.form-custom input:focus {
+  outline: none !important;
+  box-shadow: 0 0 5px #0d6efd !important;
+}
+
+.form-custom button {
+  margin-top: 5px !important;
+  position: relative !important;
+  padding: 10px 40px !important;
+  background-color: #5b80b8 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 30px !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease-in-out !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+}
+
+.form-custom button::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 10px !important;
+  width: 10px !important;
+  height: 2px !important;
+  background-color: #fff !important;
+  transform: translateY(-50%) !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+.form-custom button::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  right: 10px !important;
+  width: 10px !important;
+  height: 2px !important;
+  background-color: #fff !important;
+  transform: translateY(-50%) !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+.form-custom button:hover {
+  transform: translateX(10px) !important;
+}
+
+.form-custom button:hover::before {
+  transform: translate(20px, -50%) !important;
+}
+
+.form-custom button:hover::after {
+  transform: translate(-20px, -50%) !important;
+}
+
+.buttonPlanningToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 215px;
+  padding-bottom: 45px;
+
+}
+
+.StartPlanningButton {
+  display: flex;
+  background-color: rgba(98, 201, 149, 0.432);
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  
+}
+
+.StartPlanningButton:hover {
+  background-color: rgba(98, 201, 149, 0.6);
+  cursor: pointer;
+}

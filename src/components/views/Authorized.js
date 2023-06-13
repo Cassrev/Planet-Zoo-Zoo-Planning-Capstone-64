@@ -6,13 +6,13 @@ export const Authorized = ({ children }) => {
     // The useLocation hook is used to get the current location object
     const location = useLocation()
 
-    // Check if the "honey_user" item exists in the localStorage
+    // Check if the "sitePZ_user" item exists in the localStorage
     if (localStorage.getItem("sitePZ_user")) {
-        // If the "honey_user" item exists, render the children components
+        // If the "sitePZ_user" item exists, render the children components
         return children
     }
     else {
-        // If the "honey_user" item does not exist, redirect to the login page
+        // If the "sitePZ_user" item does not exist, redirect to the login page
         // using the Navigate component from react-router-dom
         return (
             <Navigate

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Nav, Tab, Form, Button } from 'react-bootstrap';
-import "./Login.css";
+import useSound from 'use-sound';
+import "./customLog.css";
 
 export const LoginRegister = () => {
 	/*
@@ -14,6 +15,21 @@ export const LoginRegister = () => {
 	const [isShown, setIsShown] = useState(false);
 	const [profileIcon, setProfileIcon] = useState("");
 	const [previewIcon, setPreviewIcon] = useState("");
+
+
+	const [playActive] = useSound(
+		'/sounds/pop-down.mp3',
+		{ volume: 0.25 }
+	);
+	const [playOn] = useSound(
+		'/sounds/pop-up-on.mp3',
+		{ volume: 0.25 }
+	);
+	const [playOff] = useSound(
+		'/sounds/pop-up-off.mp3',
+		{ volume: 0.25 }
+	);
+
 
 	/* 
 	!What is the point of the useNavigate hook?
@@ -124,7 +140,12 @@ export const LoginRegister = () => {
 		<>
 			{/* Button to show the login/register form */}
 			<div className="buttonPlanningToggle">
-				<button className="StartPlanningButton" onClick={handleClick}>
+				<button className="StartPlanningButton" onClick={handleClick}
+					onMouseDown={playActive}
+					onMouseUp={() => {
+						handleClick ? playOff() : playOn();
+					}}
+				>
 					Start Planning
 				</button>
 			</div>
@@ -135,20 +156,20 @@ export const LoginRegister = () => {
 						<Col xs={12} md={60}>
 							<Tab.Container id="ex1" defaultActiveKey="pills-login">
 								{/* Navigation tabs for login and registration */}
-								<Nav justify variant="pills" className="mb-3">
-									<Nav.Item>
-										<Nav.Link eventKey="pills-login">Login</Nav.Link>
+								<Nav justify variant="pills" className="mb-3 nav-pills-custom">
+									<Nav.Item className="nav-item-custom">
+										<Nav.Link eventKey="pills-login" className="custom-link nav-link-custom">Login</Nav.Link>
 									</Nav.Item>
-									<Nav.Item>
-										<Nav.Link eventKey="pills-register">Register</Nav.Link>
+									<Nav.Item className="nav-item-custom">
+										<Nav.Link eventKey="pills-register" className="custom-link nav-link-custom">Register</Nav.Link>
 									</Nav.Item>
 								</Nav>
 
 								{/* Content of the login/register form */}
 								<Tab.Content>
 									{/* Login form */}
-									<Tab.Pane eventKey="pills-login">
-										<Form onSubmit={handleLogin}>
+									<Tab.Pane eventKey="pills-login" >
+										<Form onSubmit={handleLogin} className="form-custom">
 											{/* Input field for username */}
 											<Form.Group className="mb-4">
 												<Form.Control
@@ -170,14 +191,14 @@ export const LoginRegister = () => {
 												/>
 											</Form.Group>
 											{/* Button to submit the login form */}
-											<Button variant="primary" className="btn-block mb-4" type="submit">
+											<Button variant="primary" className="btn-block mb-4 btn-dark-custom" type="submit">
 												Log in
 											</Button>
 										</Form>
 									</Tab.Pane>
 									{/* Registration form */}
 									<Tab.Pane eventKey="pills-register">
-										<Form>
+										<Form className="form-custom">
 											{/* Input field for username */}
 											<Form.Group className="mb-4">
 												<Form.Control

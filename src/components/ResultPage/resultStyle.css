@@ -5,23 +5,24 @@
     padding-top: 35px;
     padding-bottom: 50px;
 }
+
 .ResultButton {
     display: flex;
     background-color: rgba(98, 201, 149, 0.432);
     align-items: center;
 }
 
-.toggle--container {
-    display: flex;
-        justify-content: center;
-        align-items: center;
-}
-
 .planList {
     list-style: none;
+    margin-bottom: 9%;
 }
 
-.choicesUl {
-    background-color: rgba(12, 110, 61, 0.856);
+.toggle--container {
+    display: flex;
 }
 
+.transparentCard {
+    background-color: transparent !important;
+    border: none !important;
+    margin-left: 40.5%;
+}

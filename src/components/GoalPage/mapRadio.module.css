@@ -1,0 +1,43 @@
+/* mapRadio.module.css */
+
+.radioContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radioLabel {
+    margin-left: 10px;
+}
+
+.radioInput {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.radioInput::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.radioInput:checked::before {
+    background-color: #007bff;
+}
+
+.radioInput:focus::before {
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+.radioLabel {
+    font-weight: normal;
+}

@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import './PZApp.css';
 import { Authorized } from "./views/Authorized";
 import { LoginRegister } from "./auth/LoginRegister";
-import { LogOutNav } from "./nav/logout";
+import { LocalNavBar } from "./nav/navBar";
 
 export const PlanetZooApp = () => {
 	return <Routes>
@@ -12,7 +12,7 @@ export const PlanetZooApp = () => {
 		<Route path="*" element={
 				<Authorized>
 					<>
-						<LogOutNav />
+					<LocalNavBar />
 						<ApplicationViews />
 						
 					</>
