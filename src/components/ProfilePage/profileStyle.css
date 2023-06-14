@@ -1,19 +1,14 @@
 /* styles.css */
 
 .theVh {
-    height: 85vh;
+    height: 85vh !important;
 }
 
 .section-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80%;
-}
-
-.card {
-    border-radius: 15px;
-    background-color: rgba(66, 122, 83, 0.671);
+    height: 80% !important;
 }
 
 .card-body {
@@ -22,13 +17,14 @@
     justify-content: space-between;
 }
 
-.statistics {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
+.row-profile {
+    justify-content: center;
 }
 
-.row {
-    justify-content: center;
+.card-lg {
+    width: 400px !important;
+    height: 300px !important;
+    border-radius: 15px !important;
+        background-color: rgba(66, 122, 83, 0.671) !important;
+    /* Additional styling properties */
 }

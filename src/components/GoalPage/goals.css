@@ -1,3 +1,70 @@
+.containerGoal {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 85vh !important;
+}
+
 .form--post {
-    background-color: rgba(28, 117, 43, 0.507);
+    width: 100% !important;
+    max-width: 400px !important;
+    padding: 20px !important;
+    background-color: #3e705785 !important;
+    border-radius: 4px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    /* Add box shadow */
+}
+
+.label {
+    font-weight: bold !important;
+    margin-bottom: 10px !important;
+    color: #fff !important;
+}
+
+.form-group {
+    margin-bottom: 20px !important;
+}
+
+.gameModeContainer,
+.mapContainer {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.inputContainer {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.input {
+    padding: 8px !important;
+    border-radius: 4px !important;
+    border: 1px solid #9ccc65 !important;
+}
+
+.btnContinueGoal {
+    padding: 10px 20px !important;
+    background-color: #4caf50 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+}
+
+.btnContinueGoal:hover {
+    background-color: #45a049 !important;
+}
+
+.btnContinueGoal:focus {
+    outline: none !important;
+}
+
+.container-gameMode,
+.container-habitatGoalAmn,
+.container-exhibitGoalAmn,
+.container-zooMap {
+    margin-bottom: 15px;
 }

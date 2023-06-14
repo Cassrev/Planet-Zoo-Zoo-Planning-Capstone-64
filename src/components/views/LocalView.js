@@ -15,7 +15,6 @@ export const LocalViews = () => {
             <Route path="/goal" element={<GoalMain user={user} />} />
             <Route path="/result" element={<ResultContainer user={user} />} />
             <Route path="/profile" element={<ProfileMain user={user} />} />
-
         </Routes>
     );
 };

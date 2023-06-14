@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GameModeRadio } from "./GameModeRadio";
 import { MapRadio } from "./MapRadio";
+import { Form, Row, Col, Button } from 'react-bootstrap';
 import "./goals.css"
 
 /* 
@@ -60,24 +61,41 @@ export const GoalMain = ({ user }) => {
         fetchMaps();
     }, []);
 
-    // Handle save button click
+    // Function that handles the click event on a save button
     const handleSaveButtonClick = (event) => {
-        // Prevent the default form submission behavior
-        event.preventDefault();
+        event.preventDefault(); // Prevents the default form submission behavior
 
-        // Send a POST request to the specified URL
-        fetch("http://localhost:8088/choices", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(choices),
-        })
-            .then(() => {
-                // After the POST request is successfully completed,
-                // navigate to the "/result" route
-                navigate("/result");
+        // Check if the form is valid
+        if (validateForm()) {
+            // If the form is valid, make a POST request to the server
+            fetch("http://localhost:8088/choices", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(choices), // Convert the choices object to a JSON string
             })
+                .then(() => {
+                    navigate("/result"); // Redirect to the "/result" page
+                });
+        } else {
+            // If the form is not valid, display an alert message
+            alert("Please fill out all fields before continuing.");
+        }
+    };
+
+    // Function that validates the form
+    const validateForm = () => {
+        // Check if any required fields are empty
+        if (
+            choices.gameModeId === 0 || // Check if the game mode ID is 0
+            choices.zooMapId === 0 || // Check if the zoo map ID is 0
+            choices.habitatAmount === 0 || // Check if the habitat amount is 0
+            choices.exhibitAmount === 0 // Check if the exhibit amount is 0
+        ) {
+            return false; // Return false if any required field is empty
+        }
+        return true; // Return true if all required fields are filled
     };
 
     // Function to handle input change for integer values
@@ -93,84 +111,59 @@ export const GoalMain = ({ user }) => {
     };
 
     return (
-        <>
-            <form className="form--post" id="my_form" onSubmit={handleSaveButtonClick}>
-                {/* Container for game mode selection */}
-                <div className="modeContainer">
-                    <fieldset data-identifier="radio-button">
-                        <div className="form-group-gameMode">
-                            Select Game Mode:
-                            {/* Render game mode radio buttons */}
-                            {gameMode.map((modeObj) => (
-                                <GameModeRadio
-                                    key={modeObj.id}
-                                    modeObj={modeObj}
-                                    choices={choices}
-                                    handleIntegerInputChange={handleIntegerInputChange}
-                                />
-                            ))}
-                        </div>
-                    </fieldset>
-                </div>
-
-                {/* Container for habitat amount input */}
-                <div className="habitatContainer">
-                    <div className="habitatAmountInput">
-                        <label>
-                            Habitat Goal Amount:
-                            {/* Input field for habitat amount */}
-                            <input
-                                id="habitatAmount"
-                                type="number"
-                                onChange={handleIntegerInputChange}
+        <div className="containerGoal">
+            <Form className="form--post" id="my_form" onSubmit={handleSaveButtonClick}>
+                <Form.Group className="container-gameMode">
+                    <Form.Label>Select Game Mode:</Form.Label>
+                    <div className="gameModeContainer">
+                        {gameMode.map((modeObj) => (
+                            <GameModeRadio
+                                key={modeObj.id}
+                                modeObj={modeObj}
+                                choices={choices}
+                                handleIntegerInputChange={handleIntegerInputChange}
                             />
-                        </label>
+                        ))}
                     </div>
-                </div>
+                </Form.Group>
 
-                {/* Container for exhibit amount input */}
-                <div className="exhibitContainer">
-                    <div className="exhibitAmountInput">
-                        <label>
-                            Exhibit Goal Amount:
-                            {/* Input field for exhibit amount */}
-                            <input
-                                id="exhibitAmount"
-                                type="number"
-                                onChange={handleIntegerInputChange}
+                <Form.Group className="container-habitatGoalAmn">
+                    <Form.Label>Habitat Goal Amount:</Form.Label>
+                    <Form.Control
+                        id="habitatAmount"
+                        type="number"
+                        onChange={handleIntegerInputChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="container-exhibitGoalAmn">
+                    <Form.Label>Exhibit Goal Amount:</Form.Label>
+                    <Form.Control
+                        id="exhibitAmount"
+                        type="number"
+                        onChange={handleIntegerInputChange}
+                    />
+                </Form.Group>
+
+                <Form.Group className="container-zooMap">
+                    <Form.Label>Select Zoo Map:</Form.Label>
+                    <div className="mapContainer">
+                        {maps.map((mapObj) => (
+                            <MapRadio
+                                key={mapObj.id}
+                                mapObj={mapObj}
+                                choices={choices}
+                                handleIntegerInputChange={handleIntegerInputChange}
                             />
-                        </label>
+                        ))}
                     </div>
-                </div>
+                </Form.Group>
 
-                {/* Container for zoo map selection */}
-                <div className="zooMapContainer">
-                    <fieldset data-identifier="radio-button">
-                        <div className="form-group-map">
-                            Select Zoo Map:
-                            {/* Render map radio buttons */}
-                            {maps.map((mapObj) => (
-                                <MapRadio
-                                    key={mapObj.id}
-                                    mapObj={mapObj}
-                                    choices={choices}
-                                    handleIntegerInputChange={handleIntegerInputChange}
-                                />
-                            ))}
-                        </div>
-                    </fieldset>
-                </div>
-
-                {/* Container for continue button */}
-                <div className="continueArrowButtonContainer">
-                    <fieldset data-identifier="submit-button">
-                        <button className="btnContinueGoal" type="submit">
-                            Continue
-                        </button>
-                    </fieldset>
-                </div>
-            </form>
-        </>
+                <Button className="btnContinueGoal" type="submit">
+                    Continue
+                </Button>
+            </Form>
+        </div>
     );
-};
+}
 

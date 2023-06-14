@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './profileStyle.css';
 import { useNavigate } from 'react-router-dom';
-import {ProfileIconPopup} from './ProfileIconPopup';
+import { ProfileIconPopup } from './ProfileIconPopup';
 
 export const ProfileMain = ({ user }) => {
     const [userProfileIcon, setUserProfileIcon] = useState(null);
@@ -20,7 +20,7 @@ export const ProfileMain = ({ user }) => {
             const data = await response.json();
 
             // Find the user's account object within the data array based on the user's ID
-            const currentUser = data.find(account => account.id === user.id);
+            const currentUser = data.find((account) => account.id === user.id);
 
             // Update the user profile icon state variable with the value from currentUser.profileIcon
             setUserProfileIcon(currentUser.profileIcon);
@@ -40,7 +40,7 @@ export const ProfileMain = ({ user }) => {
             const data = await response.json();
 
             // Find the user's account object within the data array based on the user's ID
-            const currentUserName = data.find(account => account.id === user.id);
+            const currentUserName = data.find((account) => account.id === user.id);
 
             // Update the user name state variable with the value from currentUserName.userName
             setUserName(currentUserName.userName);
@@ -80,16 +80,16 @@ export const ProfileMain = ({ user }) => {
         <section className="theVh">
             <div className="section-container">
                 <div className="container py-5">
-                    <div className="row">
+                    <div className="row row-profile">
                         <div className="col-md-12 col-xl-4 d-flex justify-content-center">
-                            <div className="card" style={{ backgroundColor: 'rgba(66, 122, 83, 0.671)' }}>
+                            <div className="card card-lg">
                                 <div className="card-body d-flex flex-column justify-content-between">
                                     <div className="mt-3 mb-4" onClick={handlePopupToggle}>
                                         {userProfileIcon ? (
                                             <img
                                                 src={userProfileIcon}
                                                 className="rounded-circle img-fluid"
-                                                style={{ width: '100px' }}
+                                                style={{ width: '200px' }}
                                                 alt="Profile"
                                             />
                                         ) : (
@@ -102,7 +102,11 @@ export const ProfileMain = ({ user }) => {
                                         )}
                                     </div>
                                     <h4 className="mb-2">Hello, {userName}</h4>
-                                    <button onClick={() => navigate("/result")} type="button" className="btn btn-primary btn-rounded btn-lg">
+                                    <button
+                                        onClick={() => navigate('/result')}
+                                        type="button"
+                                        className="btn btn-primary btn-rounded btn-lg"
+                                    >
                                         View Your Zoo Plan
                                     </button>
                                 </div>

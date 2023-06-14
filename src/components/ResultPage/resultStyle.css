@@ -1,27 +1,86 @@
-.buttonResultToggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 35px;
-    padding-bottom: 50px;
-}
-.ResultButton {
-    display: flex;
-    background-color: rgba(98, 201, 149, 0.432);
-    align-items: center;
+.toggle--container {
+    display: block !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 65vh !important;
 }
 
-.toggle--container {
-    display: flex;
-        justify-content: center;
-        align-items: center;
+.buttonResultToggle {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 35px !important;
+    padding-bottom: 50px !important;
+}
+
+.ResultButton {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: #339767c8 !important;
+    border: none !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    padding: 15px 30px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transition: background-color 0.3s ease-in-out !important;
+}
+
+.ResultButton:hover {
+    background-color: #1fe5c497 !important;
+    cursor: pointer !important;
+}
+
+.ResultButton:focus {
+    outline: none !important;
 }
 
 .planList {
-    list-style: none;
+    list-style: none !important;
+    margin-bottom: 9% !important;
+    text-align: center;
 }
 
-.choicesUl {
-    background-color: rgba(12, 110, 61, 0.856);
+.transparentCard {
+    background-color: transparent !important;
+    border: none !important;
+    margin-left: 40.5% !important;
+    text-align: center;
 }
 
+.row-custom {
+    margin-left: 130px !important;
+    margin-right: 140px !important;
+    font-size: 15px !important;
+    text-align: center;
+}
+
+.col-custom {
+    width: 25% !important;
+    margin-top: -40px !important;
+    text-align: center;
+}
+
+.card-custom--result {
+    background-color: rgba(117, 161, 126, 0.748) !important;
+    padding: 5px !important;
+    margin: 60px !important;
+    text-align: center;
+}
+
+.card-body-custom {
+    overflow-wrap: break-word !important;
+    margin: 0 !important;
+    padding: 5px !important;
+    text-align: center;
+}
+
+.centerContent-image {
+    display: block !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-right: 745px !important;
+}

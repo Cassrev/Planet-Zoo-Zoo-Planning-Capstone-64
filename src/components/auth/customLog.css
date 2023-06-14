@@ -1,0 +1,110 @@
+.btn-dark-custom {
+  color: #fff !important;
+  background-color: #51fd0d !important;
+  border-color: #0d6efd !important;
+}
+
+.nav-pills-custom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-item-custom {
+  border-radius: 10px !important;
+  background: #3eb6acac !important;
+  padding: 0px 0px !important;
+  margin-right: 8px !important;
+}
+
+.custom-link {
+  color: #d1fff0e8 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease-in-out !important;
+}
+
+.custom-link:hover {
+  color: #5cffab !important;
+}
+
+.form-custom {
+  padding: 10px !important;
+  height: 300px !important;
+}
+
+.form-custom input {
+  margin-bottom: 12px !important;
+  border-radius: 3px !important;
+  border: 1px solid #ccc !important;
+  padding: 8px !important;
+}
+
+.form-custom input:focus {
+  outline: none !important;
+  box-shadow: 0 0 5px #0d6efd !important;
+}
+.form-custom button {
+  margin-top: 5px !important;
+  position: relative !important;
+  padding: 10px 40px !important;
+  background-color: transparent !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease-in-out !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+}
+
+.form-custom button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 16px solid #ffffff;
+  transform: translateY(-50%);
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-custom button:hover {
+  transform: translateX(10px) !important;
+}
+
+.form-custom button:hover::before {
+  border-left-color: #80ffbe;
+}
+
+
+.buttonPlanningToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 215px;
+  padding-bottom: 45px;
+
+}
+
+.StartPlanningButton {
+  display: flex;
+  background-color: rgba(52, 136, 129, 0.699);
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  color: rgb(185, 252, 221);
+  
+}
+
+.StartPlanningButton:hover {
+  background-color: rgba(92, 146, 119, 0.705);
+  cursor: pointer;
+}

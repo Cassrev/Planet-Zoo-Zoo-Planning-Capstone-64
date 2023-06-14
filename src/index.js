@@ -5,6 +5,7 @@ import { PlanetZooApp } from "./components/PZApp"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 const container = document.getElementById("root") // Getting the root element
 const root = createRoot(container) // Creating a root using the 'container' element
 
