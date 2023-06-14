@@ -14,6 +14,8 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    /* Add box shadow */
 }
 
 .label {
@@ -58,4 +60,11 @@
 
 .btnContinueGoal:focus {
     outline: none !important;
+}
+
+.container-gameMode,
+.container-habitatGoalAmn,
+.container-exhibitGoalAmn,
+.container-zooMap {
+    margin-bottom: 15px;
 }

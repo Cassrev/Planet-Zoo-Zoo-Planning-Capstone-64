@@ -80,9 +80,9 @@ export const ProfileMain = ({ user }) => {
         <section className="theVh">
             <div className="section-container">
                 <div className="container py-5">
-                    <div className="row">
+                    <div className="row row-profile">
                         <div className="col-md-12 col-xl-4 d-flex justify-content-center">
-                            <div className="card card-lg" style={{ backgroundColor: 'rgba(66, 122, 83, 0.671)' }}>
+                            <div className="card card-lg">
                                 <div className="card-body d-flex flex-column justify-content-between">
                                     <div className="mt-3 mb-4" onClick={handlePopupToggle}>
                                         {userProfileIcon ? (

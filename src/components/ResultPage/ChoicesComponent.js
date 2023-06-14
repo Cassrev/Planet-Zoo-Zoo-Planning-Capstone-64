@@ -34,6 +34,7 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
         <>
             <div className="buttonResultToggle">
                 <Button
+                    className="ResultButton"
                     variant="primary"
                     onClick={handleClick}
                     aria-controls="gameModeResult mapResult habitatAmnResult exhibitAmnResult"
@@ -43,60 +44,59 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
                 </Button>
             </div>
             <main className="toggle--container">
-                <div>
-                    <ul className="choicesUl">
-                        {choices.map((choice, index) => {
-                            const gameMode = gameModes.find((mode) => mode.id === choice.gameModeId);
-                            const map = maps.find((m) => m.id === choice.zooMapId);
+                <ul className="choicesUl">
+                    {choices.map((choice, index) => {
+                        const gameMode = gameModes.find((mode) => mode.id === choice.gameModeId);
+                        const map = maps.find((m) => m.id === choice.zooMapId);
 
-                            return (
-                                <li className="planList" key={index}>
-                                    <Collapse in={isShown}>
-                                        <Card className="transparentCard">
-                                            <Card.Body className="centerContent">
-                                                <SpeechBubbleIcon onDelete={() => handleDeleteChoice(choice.id)} onSave={handleSaveChoice} />
-                                            </Card.Body>
-                                        </Card>
-                                    </Collapse>
+                        return (<>
+                            <Collapse in={isShown}>
+                                <Card className="transparentCard">
+                                    <Card.Body className="centerContent-image d-flex justify-content-center align-items-center">
+                                        <SpeechBubbleIcon onDelete={() => handleDeleteChoice(choice.id)} onSave={handleSaveChoice} />
+                                    </Card.Body>
+                                </Card>
+                            </Collapse>
 
-                                    <div className="row">
-                                        <div className="col">
-                                            <Collapse in={isShown}>
-                                                <Card>
-                                                    <Card.Body>Your Game Mode is {gameMode ? gameMode.mode : "Unknown"}</Card.Body>
-                                                </Card>
-                                            </Collapse>
-                                        </div>
+                            <li className="planList" key={index}>
 
-                                        <div className="col">
-                                            <Collapse in={isShown}>
-                                                <Card>
-                                                    <Card.Body>Your Zoo Map is {map ? map.type : "Unknown"}</Card.Body>
-                                                </Card>
-                                            </Collapse>
-                                        </div>
-
-                                        <div className="col">
-                                            <Collapse in={isShown}>
-                                                <Card>
-                                                    <Card.Body>Your aimed Habitat amount is {choice.habitatAmount || "Unknown"}</Card.Body>
-                                                </Card>
-                                            </Collapse>
-                                        </div>
-
-                                        <div className="col">
-                                            <Collapse in={isShown}>
-                                                <Card>
-                                                    <Card.Body>Your aimed Exhibit amount is {choice.exhibitAmount || "Unknown"}</Card.Body>
-                                                </Card>
-                                            </Collapse>
-                                        </div>
+                                <div className="row row-custom">
+                                    <div className="col-custom">
+                                        <Collapse in={isShown}>
+                                            <Card className="card-custom--result">
+                                                <Card.Body className="card-body-custom">Your Game Mode is {gameMode ? gameMode.mode : "Unknown"}</Card.Body>
+                                            </Card>
+                                        </Collapse>
                                     </div>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
+
+                                    <div className="col-custom">
+                                        <Collapse in={isShown}>
+                                            <Card className="card-custom--result">
+                                                <Card.Body className="card-body-custom">Your Zoo Map is {map ? map.type : "Unknown"}</Card.Body>
+                                            </Card>
+                                        </Collapse>
+                                    </div>
+
+                                    <div className="col-custom">
+                                        <Collapse in={isShown}>
+                                            <Card className="card-custom--result">
+                                                <Card.Body className="card-body-custom">Your aimed Habitat amount is {choice.habitatAmount || "Unknown"}</Card.Body>
+                                            </Card>
+                                        </Collapse>
+                                    </div>
+
+                                    <div className="col-custom">
+                                        <Collapse in={isShown}>
+                                            <Card className="card-custom--result">
+                                                <Card.Body className="card-body-custom">Your aimed Exhibit amount is {choice.exhibitAmount || "Unknown"}</Card.Body>
+                                            </Card>
+                                        </Collapse>
+                                    </div>
+                                </div>
+                            </li>
+                        </>);
+                    })}
+                </ul>
             </main>
         </>
     );

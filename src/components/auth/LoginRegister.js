@@ -2,7 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Nav, Tab, Form, Button } from 'react-bootstrap';
 import useSound from 'use-sound';
+import mouth_09_pop from '../sound/mouth_09_pop.mp3';
 import "./customLog.css";
+import "./animalText.css";
 
 export const LoginRegister = () => {
 	/*
@@ -17,19 +19,9 @@ export const LoginRegister = () => {
 	const [previewIcon, setPreviewIcon] = useState("");
 
 
-	const [playActive] = useSound(
-		'/sounds/pop-down.mp3',
-		{ volume: 0.25 }
-	);
-	const [playOn] = useSound(
-		'/sounds/pop-up-on.mp3',
-		{ volume: 0.25 }
-	);
-	const [playOff] = useSound(
-		'/sounds/pop-up-off.mp3',
-		{ volume: 0.25 }
-	);
-
+	const [playActive] = useSound(mouth_09_pop, { volume: 0.25 });
+	const [playOn] = useSound(mouth_09_pop, { volume: 0.25 });
+	const [playOff] = useSound(mouth_09_pop, { volume: 0.25 });
 
 	/* 
 	!What is the point of the useNavigate hook?
@@ -139,6 +131,7 @@ export const LoginRegister = () => {
 	return (
 		<>
 			{/* Button to show the login/register form */}
+			<div className="testingAn">test</div>
 			<div className="buttonPlanningToggle">
 				<button className="StartPlanningButton" onClick={handleClick}
 					onMouseDown={playActive}
@@ -175,7 +168,7 @@ export const LoginRegister = () => {
 												<Form.Control
 													type="userName"
 													id="loginName"
-													placeholder="Email or username"
+													placeholder="Username"
 													value={userName}
 													onChange={(e) => setUserName(e.target.value)}
 												/>
@@ -204,7 +197,7 @@ export const LoginRegister = () => {
 												<Form.Control
 													type="text"
 													id="userName"
-													placeholder="Username"
+													placeholder="Create your Username"
 													value={userName}
 													onChange={(e) => updateUser(e, "userName")}
 												/>
@@ -214,7 +207,7 @@ export const LoginRegister = () => {
 												<Form.Control
 													type="password"
 													id="registerPassword"
-													placeholder="Password"
+													placeholder="Register your Password"
 													value={passWord}
 													onChange={(e) => setPassword(e.target.value)}
 												/>

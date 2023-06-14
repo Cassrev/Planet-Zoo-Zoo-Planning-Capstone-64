@@ -4,12 +4,6 @@
   border-color: #0d6efd !important;
 }
 
-.btn-dark-custom:hover {
-  color: #fff !important;
-  background-color: #71c08b !important;
-  border-color: #0d6efd !important;
-}
-
 .nav-pills-custom {
   display: flex;
   justify-content: space-between;
@@ -17,27 +11,20 @@
 }
 
 .nav-item-custom {
-  border-radius: 30px !important;
-  background: #4ab6659d !important;
-  padding: 8px 16px !important;
-  margin-right: 8px !important;
-}
-.nav-item-custom:active {
-  border-radius: 30px !important;
-  background: #ff3021 !important;
-  padding: 8px 16px !important;
+  border-radius: 10px !important;
+  background: #3eb6acac !important;
+  padding: 0px 0px !important;
   margin-right: 8px !important;
 }
 
 .custom-link {
-  color: #b0ffa0 !important;
+  color: #d1fff0e8 !important;
   text-decoration: none !important;
   transition: color 0.3s ease-in-out !important;
-  
 }
 
 .custom-link:hover {
-  color: #0592fd !important;
+  color: #5cffab !important;
 }
 
 .form-custom {
@@ -56,15 +43,14 @@
   outline: none !important;
   box-shadow: 0 0 5px #0d6efd !important;
 }
-
 .form-custom button {
   margin-top: 5px !important;
   position: relative !important;
   padding: 10px 40px !important;
-  background-color: #5b80b8 !important;
+  background-color: transparent !important;
   color: #fff !important;
   border: none !important;
-  border-radius: 30px !important;
+  border-radius: 0 !important;
   overflow: hidden !important;
   transition: transform 0.3s ease-in-out !important;
   font-size: 16px !important;
@@ -75,27 +61,17 @@
 }
 
 .form-custom button::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 10px !important;
-  width: 10px !important;
-  height: 2px !important;
-  background-color: #fff !important;
-  transform: translateY(-50%) !important;
-  transition: transform 0.3s ease-in-out !important;
-}
-
-.form-custom button::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 50% !important;
-  right: 10px !important;
-  width: 10px !important;
-  height: 2px !important;
-  background-color: #fff !important;
-  transform: translateY(-50%) !important;
-  transition: transform 0.3s ease-in-out !important;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 16px solid #ffffff;
+  transform: translateY(-50%);
+  transition: border-color 0.3s ease-in-out;
 }
 
 .form-custom button:hover {
@@ -103,12 +79,9 @@
 }
 
 .form-custom button:hover::before {
-  transform: translate(20px, -50%) !important;
+  border-left-color: #80ffbe;
 }
 
-.form-custom button:hover::after {
-  transform: translate(-20px, -50%) !important;
-}
 
 .buttonPlanningToggle {
   display: flex;
@@ -121,16 +94,17 @@
 
 .StartPlanningButton {
   display: flex;
-  background-color: rgba(98, 201, 149, 0.432);
+  background-color: rgba(52, 136, 129, 0.699);
   align-items: center;
   padding: 10px 20px;
   font-size: 18px;
   border-radius: 8px;
   border: none;
+  color: rgb(185, 252, 221);
   
 }
 
 .StartPlanningButton:hover {
-  background-color: rgba(98, 201, 149, 0.6);
+  background-color: rgba(92, 146, 119, 0.705);
   cursor: pointer;
 }
