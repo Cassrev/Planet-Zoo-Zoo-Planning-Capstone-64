@@ -7,15 +7,26 @@
 
 .form--post {
     width: 100% !important;
-    max-width: 400px !important;
+    max-width: 690px !important;
     padding: 20px !important;
     background-color: #3e705785 !important;
     border-radius: 4px !important;
     display: flex !important;
     flex-direction: column !important;
+    /* Changed to column */
     justify-content: center !important;
+    align-items: center !important;
+    /* Added align-items */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-    /* Add box shadow */
+}
+
+.custom-form-label {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-family: 'im_fell_english_proregular';
+    font-size: 45px;
+    margin-bottom: -5px;
 }
 
 .label {
@@ -31,18 +42,32 @@
 .gameModeContainer,
 .mapContainer {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
+    /* Changed to row */
+    align-items: center !important;
+    /* Added align-items */
+    justify-content: space-between !important;
+    /* Added justify-content */
 }
 
 .inputContainer {
     display: flex !important;
     align-items: center !important;
+    margin-bottom: 10px !important;
+    /* Added margin-bottom */
 }
 
 .input {
     padding: 8px !important;
     border-radius: 4px !important;
     border: 1px solid #9ccc65 !important;
+    flex: 1;
+    /* Added flex: 1 to grow to available width */
+}
+
+#habitatAmount, #exhibitAmount {
+    width: 250px;
+    margin-left: 80px;
 }
 
 .btnContinueGoal {
@@ -66,5 +91,5 @@
 .container-habitatGoalAmn,
 .container-exhibitGoalAmn,
 .container-zooMap {
-    margin-bottom: 15px;
+    margin-bottom: 35px;
 }

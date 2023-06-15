@@ -1,4 +1,10 @@
 .testingAn {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: -150px;
     font-family: 'zoologicregular';
-    color: red;
+    font-size: 47.5px;
+    letter-spacing: 8px;
+    color: rgba(20, 182, 106, 0.208);
 }

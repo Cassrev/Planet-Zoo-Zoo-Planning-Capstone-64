@@ -1,4 +1,6 @@
-@import "./webfontkit-zooTheme/stylesheet.css";
+@import "./webfontkit-zooTheme1/stylesheet.css";
+@import "./webfontkit-zooTheme2/stylesheet.css";
+@import "./webfontkit-zooTheme3/stylesheet.css";
 
 body {
   margin: 0;

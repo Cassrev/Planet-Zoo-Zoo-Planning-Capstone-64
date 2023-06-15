@@ -114,7 +114,7 @@ export const GoalMain = ({ user }) => {
         <div className="containerGoal">
             <Form className="form--post" id="my_form" onSubmit={handleSaveButtonClick}>
                 <Form.Group className="container-gameMode">
-                    <Form.Label>Select Game Mode:</Form.Label>
+                    <Form.Label className="custom-form-label">Select Game Mode:</Form.Label>
                     <div className="gameModeContainer">
                         {gameMode.map((modeObj) => (
                             <GameModeRadio
@@ -128,7 +128,7 @@ export const GoalMain = ({ user }) => {
                 </Form.Group>
 
                 <Form.Group className="container-habitatGoalAmn">
-                    <Form.Label>Habitat Goal Amount:</Form.Label>
+                    <Form.Label className="custom-form-label">Habitat Goal Amount:</Form.Label>
                     <Form.Control
                         id="habitatAmount"
                         type="number"
@@ -137,7 +137,7 @@ export const GoalMain = ({ user }) => {
                 </Form.Group>
 
                 <Form.Group className="container-exhibitGoalAmn">
-                    <Form.Label>Exhibit Goal Amount:</Form.Label>
+                    <Form.Label className="custom-form-label">Exhibit Goal Amount:</Form.Label>
                     <Form.Control
                         id="exhibitAmount"
                         type="number"
@@ -146,7 +146,7 @@ export const GoalMain = ({ user }) => {
                 </Form.Group>
 
                 <Form.Group className="container-zooMap">
-                    <Form.Label>Select Zoo Map:</Form.Label>
+                    <Form.Label className="custom-form-label">Select Zoo Map:</Form.Label>
                     <div className="mapContainer">
                         {maps.map((mapObj) => (
                             <MapRadio
