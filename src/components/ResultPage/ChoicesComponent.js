@@ -3,9 +3,15 @@ import { SpeechBubbleIcon } from "./zookeeper/zooKeeperIcon";
 import "./resultStyle.css";
 import { useNavigate } from "react-router-dom";
 import { Button, Collapse, Card } from "react-bootstrap";
+import useSound from 'use-sound';
+import mouth_09_pop from '../../sound/mouth_09_pop.mp3';
 
 export const ChoicesComponent = ({ choices, gameModes, maps }) => {
     const navigate = useNavigate();
+
+    const [playActive] = useSound(mouth_09_pop, { volume: 0.25 });
+    const [playOn] = useSound(mouth_09_pop, { volume: 0.25 });
+    const [playOff] = useSound(mouth_09_pop, { volume: 0.25 });
 
     const handleDeleteChoice = (choiceId) => {
         // Delete the choice by making a DELETE request to the API
@@ -39,6 +45,10 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
                     onClick={handleClick}
                     aria-controls="gameModeResult mapResult habitatAmnResult exhibitAmnResult"
                     aria-expanded={isShown}
+                    onMouseDown={playActive}
+                    onMouseUp={() => {
+                        handleClick ? playOff() : playOn();
+                    }}
                 >
                     View Plan
                 </Button>
@@ -92,6 +102,9 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
                                             </Card>
                                         </Collapse>
                                     </div>
+                                    <Collapse in={isShown}>
+                                        <div className="footPrintFont">aAbBcCdlLmMnNoOqQRtzZvVkK</div>
+                                    </Collapse>
                                 </div>
                             </li>
                         </>);

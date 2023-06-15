@@ -5,6 +5,13 @@
     height: 65vh !important;
 }
 
+.footPrintFont {
+    font-family: 'animaltracksregular';
+    font-size: 50px;
+    color: rgba(44, 215, 124, 0.225);
+    letter-spacing: 15px;
+}
+
 .buttonResultToggle {
     display: flex !important;
     justify-content: center !important;
@@ -15,22 +22,22 @@
 
 .ResultButton {
     display: flex !important;
-    justify-content: center !important;
+    background-color: rgba(52, 136, 129, 0.699) !important;
     align-items: center !important;
-    background-color: #339767c8 !important;
+    padding: 5px 20px !important;
+    border-radius: 8px !important;
     border: none !important;
-    color: #fff !important;
-    font-size: 20px !important;
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-    padding: 15px 30px !important;
-    border-radius: 15px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-    transition: background-color 0.3s ease-in-out !important;
+    color: rgb(185, 252, 221) !important;
+    font-family: 'end_of_anthropoceneregular' !important;
+    font-size: 50.9px !important;
+    text-shadow: 2px 2px 7px #CDF4D1 !important;
+    letter-spacing: 5.5px !important;
+    -webkit-box-shadow: 5px 5px 15px 5px #0000006c !important;
+    box-shadow: 5px 5px 15px 5px #00000046 !important;
 }
 
 .ResultButton:hover {
-    background-color: #1fe5c497 !important;
+    background-color: rgba(92, 146, 119, 0.705) !important;
     cursor: pointer !important;
 }
 
@@ -75,6 +82,8 @@
     overflow-wrap: break-word !important;
     margin: 0 !important;
     padding: 5px !important;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
     text-align: center;
 }
 
