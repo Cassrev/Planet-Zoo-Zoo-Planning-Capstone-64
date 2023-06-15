@@ -1,3 +1,4 @@
+// Importing necessary dependencies and components
 import { useState } from "react";
 import { SpeechBubbleIcon } from "./zookeeper/zooKeeperIcon";
 import "./resultStyle.css";
@@ -6,7 +7,9 @@ import { Button, Collapse, Card } from "react-bootstrap";
 import useSound from 'use-sound';
 import mouth_09_pop from '../../sound/mouth_09_pop.mp3';
 
+// Define the ChoicesComponent functional component that takes props as input
 export const ChoicesComponent = ({ choices, gameModes, maps }) => {
+    // Initialize necessary states and hooks
     const navigate = useNavigate();
 
     const [playActive] = useSound(mouth_09_pop, { volume: 0.25 });
@@ -38,8 +41,10 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
 
     return (
         <>
-        <div className="animalSilFont">Show</div>
+            {/* Render a div with a class name */}
+            <div className="animalSilFont">Show</div>
             <div className="buttonResultToggle">
+                {/* Render a Button component */}
                 <Button
                     className="ResultButton"
                     variant="primary"
@@ -54,61 +59,79 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
                     View Plan
                 </Button>
             </div>
+            {/* Render the main container */}
             <main className="toggle--container">
+                {/* Render an unordered list */}
                 <ul className="choicesUl">
+                    {/* Map over the 'choices' array and render a list item for each choice */}
                     {choices.map((choice, index) => {
                         const gameMode = gameModes.find((mode) => mode.id === choice.gameModeId);
                         const map = maps.find((m) => m.id === choice.zooMapId);
 
-                        return (<>
-                            <Collapse in={isShown}>
-                                <Card className="transparentCard">
-                                    <Card.Body className="centerContent-image d-flex justify-content-center align-items-center">
-                                        <SpeechBubbleIcon onDelete={() => handleDeleteChoice(choice.id)} onSave={handleSaveChoice} />
-                                    </Card.Body>
-                                </Card>
-                            </Collapse>
+                        return (
+                            <>
+                                {/* Render a Collapse component */}
+                                <Collapse in={isShown}>
+                                    <Card className="transparentCard">
+                                        <Card.Body className="centerContent-image d-flex justify-content-center align-items-center">
+                                            {/* Render the SpeechBubbleIcon component */}
+                                            <SpeechBubbleIcon onDelete={() => handleDeleteChoice(choice.id)} onSave={handleSaveChoice} />
+                                        </Card.Body>
+                                    </Card>
+                                </Collapse>
 
-                            <li className="planList" key={index}>
+                                {/* Render a list item */}
+                                <li className="planList" key={index}>
+                                    {/* Render a row */}
+                                    <div className="row row-custom">
+                                        {/* Render a column */}
+                                        <div className="col-custom">
+                                            {/* Render a Collapse component */}
+                                            <Collapse in={isShown}>
+                                                <Card className="card-custom--result">
+                                                    <Card.Body className="card-body-custom">Your Game Mode is {gameMode ? gameMode.mode : "Unknown"}</Card.Body>
+                                                </Card>
+                                            </Collapse>
+                                        </div>
 
-                                <div className="row row-custom">
-                                    <div className="col-custom">
+                                        {/* Render a column */}
+                                        <div className="col-custom">
+                                            {/* Render a Collapse component */}
+                                            <Collapse in={isShown}>
+                                                <Card className="card-custom--result">
+                                                    <Card.Body className="card-body-custom">Your Zoo Map is {map ? map.type : "Unknown"}</Card.Body>
+                                                </Card>
+                                            </Collapse>
+                                        </div>
+
+                                        {/* Render a column */}
+                                        <div className="col-custom">
+                                            {/* Render a Collapse component */}
+                                            <Collapse in={isShown}>
+                                                <Card className="card-custom--result">
+                                                    <Card.Body className="card-body-custom">Your aimed Habitat amount is {choice.habitatAmount || "Unknown"}</Card.Body>
+                                                </Card>
+                                            </Collapse>
+                                        </div>
+
+                                        {/* Render a column */}
+                                        <div className="col-custom">
+                                            {/* Render a Collapse component */}
+                                            <Collapse in={isShown}>
+                                                <Card className="card-custom--result">
+                                                    <Card.Body className="card-body-custom">Your aimed Exhibit amount is {choice.exhibitAmount || "Unknown"}</Card.Body>
+                                                </Card>
+                                            </Collapse>
+                                        </div>
+
                                         <Collapse in={isShown}>
-                                            <Card className="card-custom--result">
-                                                <Card.Body className="card-body-custom">Your Game Mode is {gameMode ? gameMode.mode : "Unknown"}</Card.Body>
-                                            </Card>
+                                            {/* Render a div */}
+                                            <div className="footPrintFont">aAbBcCdlLmMnNoOqQRtzZvVkKuUpPzEe</div>
                                         </Collapse>
                                     </div>
-                                
-                                    <div className="col-custom">
-                                        <Collapse in={isShown}>
-                                            <Card className="card-custom--result">
-                                                <Card.Body className="card-body-custom">Your Zoo Map is {map ? map.type : "Unknown"}</Card.Body>
-                                            </Card>
-                                        </Collapse>
-                                    </div>
-
-                                    <div className="col-custom">
-                                        <Collapse in={isShown}>
-                                            <Card className="card-custom--result">
-                                                <Card.Body className="card-body-custom">Your aimed Habitat amount is {choice.habitatAmount || "Unknown"}</Card.Body>
-                                            </Card>
-                                        </Collapse>
-                                    </div>
-
-                                    <div className="col-custom">
-                                        <Collapse in={isShown}>
-                                            <Card className="card-custom--result">
-                                                <Card.Body className="card-body-custom">Your aimed Exhibit amount is {choice.exhibitAmount || "Unknown"}</Card.Body>
-                                            </Card>
-                                        </Collapse>
-                                    </div>
-                                    <Collapse in={isShown}>
-                                        <div className="footPrintFont">aAbBcCdlLmMnNoOqQRtzZvVkKuUpPzEe</div>
-                                    </Collapse>
-                                </div>
-                            </li>
-                        </>);
+                                </li>
+                            </>
+                        );
                     })}
                 </ul>
             </main>
