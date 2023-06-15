@@ -1,3 +1,11 @@
-/* .btn-primary {
-    background-color: red;
-} */
+.btn-primary-Popup {
+    background-color: rgba(77, 180, 117, 0.611) !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    border-radius: 5px !important;
+    font-size: 16.8px !important;
+    width: 58.8px !important;
+}
+
+.btn-primary-Popup:hover {
+    background-color: rgba(115, 229, 159, 0.597) !important; 
+}

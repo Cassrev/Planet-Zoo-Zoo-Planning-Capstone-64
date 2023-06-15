@@ -38,6 +38,7 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
 
     return (
         <>
+        <div className="animalSilFont">Show</div>
             <div className="buttonResultToggle">
                 <Button
                     className="ResultButton"
@@ -78,7 +79,7 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
                                             </Card>
                                         </Collapse>
                                     </div>
-
+                                
                                     <div className="col-custom">
                                         <Collapse in={isShown}>
                                             <Card className="card-custom--result">
@@ -103,7 +104,7 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
                                         </Collapse>
                                     </div>
                                     <Collapse in={isShown}>
-                                        <div className="footPrintFont">aAbBcCdlLmMnNoOqQRtzZvVkK</div>
+                                        <div className="footPrintFont">aAbBcCdlLmMnNoOqQRtzZvVkKuUpPzEe</div>
                                     </Collapse>
                                 </div>
                             </li>

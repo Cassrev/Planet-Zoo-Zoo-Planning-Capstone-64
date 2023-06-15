@@ -7,22 +7,6 @@ export const LocalNavBar = () => {
 
     return (
         <ul className="navbar">
-
-            {/* <li className="navbar__item active">
-                <Link className="navbar__link" to="/goal">
-                    Goal
-                </Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/result">
-                    Result
-                </Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/profile">
-                    Profile
-                </Link>
-            </li> */}
             
             {/* Conditional rendering based on the presence of a user in local storage */}
             {localStorage.getItem("sitePZ_user") ? (
@@ -37,6 +21,7 @@ export const LocalNavBar = () => {
                             // Navigate to the home page (replace the current URL)
                             navigate("/", { replace: true });
                         }}
+                        style={{ textDecoration: "none" }} // Add this line
                     >
                         Logout
                     </Link>

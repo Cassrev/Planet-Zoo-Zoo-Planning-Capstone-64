@@ -7,7 +7,7 @@
 
 .form--post {
     width: 100% !important;
-    max-width: 690px !important;
+    max-width: 740px !important;
     padding: 20px !important;
     background-color: #3e705785 !important;
     border-radius: 4px !important;
@@ -71,20 +71,43 @@
 }
 
 .btnContinueGoal {
-    padding: 10px 20px !important;
-    background-color: #4caf50 !important;
+    font-family: 'natureregular' !important;
+    font-size: 30px !important;
+    margin-top: 5px !important;
+    position: relative !important;
+    padding: 10px 40px !important;
+    background-color: transparent !important;
     color: #fff !important;
     border: none !important;
-    border-radius: 4px !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease-in-out !important;
+    font-weight: bold !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
     cursor: pointer !important;
 }
 
-.btnContinueGoal:hover {
-    background-color: #45a049 !important;
+.btnContinueGoal::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 16px solid #ffffff;
+    transform: translateY(-50%);
+    transition: border-color 0.3s ease-in-out;
 }
 
-.btnContinueGoal:focus {
-    outline: none !important;
+.btnContinueGoal:hover {
+    transform: translateX(10px) !important;
+}
+
+.btnContinueGoal:hover::before {
+    border-left-color: #b7f9d7;
 }
 
 .container-gameMode,

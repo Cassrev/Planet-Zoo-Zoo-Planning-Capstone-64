@@ -81,15 +81,15 @@ export const ProfileMain = ({ user }) => {
             <div className="section-container">
                 <div className="container py-5">
                     <div className="row row-profile">
-                        <div className="col-md-12 col-xl-4 d-flex justify-content-center">
+                        <div className="col-md-12 col-xl-9 d-flex justify-content-center">
                             <div className="card card-lg">
                                 <div className="card-body d-flex flex-column justify-content-between">
-                                    <div className="mt-3 mb-4" onClick={handlePopupToggle}>
+                                    <div className="mt-6 mb-9 custom--icon" onClick={handlePopupToggle}>
                                         {userProfileIcon ? (
                                             <img
                                                 src={userProfileIcon}
                                                 className="rounded-circle img-fluid"
-                                                style={{ width: '200px' }}
+                                                style={{ width: '195px' }}
                                                 alt="Profile"
                                             />
                                         ) : (
@@ -101,13 +101,20 @@ export const ProfileMain = ({ user }) => {
                                             </div>
                                         )}
                                     </div>
-                                    <h4 className="mb-2">Hello, {userName}</h4>
+                                    <h4 className="mb-2 custom-GreetingProfile">Hello, {userName}</h4>
                                     <button
                                         onClick={() => navigate('/result')}
                                         type="button"
-                                        className="btn btn-primary btn-rounded btn-lg"
+                                        className="btn btn-primary btn-rounded btn-lg custom--ViewPlanBtn"
                                     >
                                         View Your Zoo Plan
+                                    </button>
+                                    <button
+                                        onClick={() => navigate('/goal')}
+                                        type="button"
+                                        className="btn btn-primary btn-rounded btn-lg custom--GoalPage"
+                                    >
+                                        Travel to Goal Creation
                                     </button>
                                 </div>
                             </div>

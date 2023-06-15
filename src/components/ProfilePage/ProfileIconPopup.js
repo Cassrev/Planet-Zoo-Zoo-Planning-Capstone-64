@@ -15,7 +15,7 @@ export const ProfileIconPopup = ({ onSave }) => {
     return (
         <div className="popup-content">
             <input type="text" value={newIconUrl} onChange={handleInputChange} placeholder="Enter icon URL" />
-            <button onClick={handleSaveClick} type="button" className="btn btn-primary">
+            <button onClick={handleSaveClick} type="button" className="btn btn-primary-Popup">
                 Save
             </button>
         </div>
