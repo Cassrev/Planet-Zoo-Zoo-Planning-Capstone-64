@@ -130,6 +130,7 @@ export const LoginRegister = () => {
 	// JSX markup
 	return (
 		<>
+			<div className="sleepingKoala"><img src="https://monophy.com/media/PjfAiJ3Rdrly1lrFTU/monophy.gif" height="280" width="250" /></div>
 			{/* Button to show the login/register form */}
 			<div className="testingAn">VtesL</div>
 			<div className="buttonPlanningToggle">
@@ -245,6 +246,6 @@ export const LoginRegister = () => {
 					</Row>
 				</Container>
 			)}
-		</>
+			</>
 	);
 };
