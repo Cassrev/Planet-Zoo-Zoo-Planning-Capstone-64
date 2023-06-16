@@ -10,7 +10,6 @@ The component receives three parent props:
 > handleIntegerInputChange: A function that handles changes when this radio button is selected. The function is destructured, so handleIntegerInputChange directly references this prop.
 */
 
-
 export const GameModeRadio = ({ modeObj, choices, handleIntegerInputChange }) => {
     return (
         <div key={modeObj.id} className="radio">
