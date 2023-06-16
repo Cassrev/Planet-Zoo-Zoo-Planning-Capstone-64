@@ -1,7 +1,5 @@
-/* styles.css */
-
 .theVh {
-    height: 85vh !important;
+    height: 90vh !important;
 }
 
 .section-container {
@@ -22,9 +20,53 @@
 }
 
 .card-lg {
-    width: 400px !important;
-    height: 300px !important;
+    width: 500px !important;
+    height: 350px !important;
     border-radius: 15px !important;
-        background-color: rgba(66, 122, 83, 0.671) !important;
-    /* Additional styling properties */
+    background-color: #3e705785 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.custom--icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 1px !important;
+    margin-left: -5px !important;
+}
+
+.custom-GreetingProfile {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px !important;
+    margin-right: 20px !important;
+    font-family: 'immortalregular' !important;
+    font-size: 35px !important;
+}
+
+.custom--ViewPlanBtn {
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+.custom--GoalPage {
+    margin-bottom: 20px !important;
+}
+
+.custom--GoalPage,
+.custom--ViewPlanBtn {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-family: 'lilac_malariaregular' !important;
+    background-color: rgba(39, 152, 139, 0.562) !important;
+    border: none !important;
+    width: 290px !important;
+    margin-left: 85px !important;
+}
+
+.custom--GoalPage:hover,
+.custom--ViewPlanBtn:hover {
+    background-color: rgba(61, 128, 153, 0.848) !important;
+    color: rgba(184, 243, 218, 0.788) !important;
 }

@@ -2,12 +2,15 @@
   color: #fff !important;
   background-color: #51fd0d !important;
   border-color: #0d6efd !important;
+  display: flex;
+  margin-left: 65px;
 }
 
 .nav-pills-custom {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  width: 55%;
+  margin-left: 85px;
 }
 
 .nav-item-custom {
@@ -17,6 +20,12 @@
   margin-right: 8px !important;
 }
 
+.form-control {
+  display: flex !important;
+  justify-content: center !important;
+  width: 250px !important;
+}
+
 .custom-link {
   color: #d1fff0e8 !important;
   text-decoration: none !important;
@@ -24,26 +33,52 @@
 }
 
 .custom-link:hover {
-  color: #5cffab !important;
+  color: #55e1e8 !important;
 }
 
 .form-custom {
-  padding: 10px !important;
+  padding: 5px !important;
   height: 300px !important;
+
+}
+
+#loginName,
+#loginPassword,
+#userName,
+#registerPassword,
+#profileIcon {
+  width: 270px;
+  display: flex !important;
+  justify-content: center !important;
+  margin-left: 60px;
+}
+
+#loginName,
+#loginPassword {
+  margin-right: 65px !important;
 }
 
 .form-custom input {
+  display: flex !important;
+  justify-content: center !important;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
   margin-bottom: 12px !important;
   border-radius: 3px !important;
   border: 1px solid #ccc !important;
   padding: 8px !important;
+  width: 300px;
+
 }
 
 .form-custom input:focus {
   outline: none !important;
   box-shadow: 0 0 5px #0d6efd !important;
 }
-.form-custom button {
+
+.form-custom .btn-block {
+  font-family: 'natureregular';
+  font-size: 30px !important;
   margin-top: 5px !important;
   position: relative !important;
   padding: 10px 40px !important;
@@ -53,14 +88,14 @@
   border-radius: 0 !important;
   overflow: hidden !important;
   transition: transform 0.3s ease-in-out !important;
-  font-size: 16px !important;
+
   font-weight: bold !important;
   letter-spacing: 1px !important;
   text-transform: uppercase !important;
   cursor: pointer !important;
 }
 
-.form-custom button::before {
+.form-custom .btn-block::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -74,12 +109,12 @@
   transition: border-color 0.3s ease-in-out;
 }
 
-.form-custom button:hover {
+.form-custom .btn-block:hover {
   transform: translateX(10px) !important;
 }
 
-.form-custom button:hover::before {
-  border-left-color: #80ffbe;
+.form-custom .btn-block:hover::before {
+  border-left-color: #b7f9d7;
 }
 
 
@@ -87,7 +122,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 215px;
+  padding-top: 160px;
   padding-bottom: 45px;
 
 }
@@ -96,15 +131,25 @@
   display: flex;
   background-color: rgba(52, 136, 129, 0.699);
   align-items: center;
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 5px 20px;
   border-radius: 8px;
   border: none;
   color: rgb(185, 252, 221);
-  
+  font-family: 'end_of_anthropoceneregular';
+  font-size: 50.9px;
+  text-shadow: 2px 2px 7px #CDF4D1;
+  letter-spacing: 5.5px;
+  -webkit-box-shadow: 5px 5px 15px 5px #0000006c;
+  box-shadow: 5px 5px 15px 5px #00000046;
 }
 
 .StartPlanningButton:hover {
   background-color: rgba(92, 146, 119, 0.705);
   cursor: pointer;
+}
+
+.sleepingKoala {
+  position: absolute;
+  margin-top: 498px;
+  margin-left: 1595px;
 }

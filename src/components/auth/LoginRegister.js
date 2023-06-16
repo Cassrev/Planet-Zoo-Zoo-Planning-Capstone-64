@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Nav, Tab, Form, Button } from 'react-bootstrap';
 import useSound from 'use-sound';
-import mouth_09_pop from '../sound/mouth_09_pop.mp3';
+import mouth_09_pop from '../../sound/mouth_09_pop.mp3';
 import "./customLog.css";
 import "./animalText.css";
 
@@ -130,8 +130,9 @@ export const LoginRegister = () => {
 	// JSX markup
 	return (
 		<>
+			<div className="sleepingKoala"><img src="https://monophy.com/media/PjfAiJ3Rdrly1lrFTU/monophy.gif" height="280" width="250" /></div>
 			{/* Button to show the login/register form */}
-			<div className="testingAn">test</div>
+			<div className="testingAn">VtesL</div>
 			<div className="buttonPlanningToggle">
 				<button className="StartPlanningButton" onClick={handleClick}
 					onMouseDown={playActive}

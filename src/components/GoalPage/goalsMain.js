@@ -110,11 +110,12 @@ export const GoalMain = ({ user }) => {
         setChoice(copyOfUserChoices);
     };
 
-    return (
+    return (<>
+    <div className="animalSilFontText">YWDBlPoZvMg</div>
         <div className="containerGoal">
             <Form className="form--post" id="my_form" onSubmit={handleSaveButtonClick}>
                 <Form.Group className="container-gameMode">
-                    <Form.Label>Select Game Mode:</Form.Label>
+                    <Form.Label className="custom-form-label">Select Game Mode:</Form.Label>
                     <div className="gameModeContainer">
                         {gameMode.map((modeObj) => (
                             <GameModeRadio
@@ -126,27 +127,28 @@ export const GoalMain = ({ user }) => {
                         ))}
                     </div>
                 </Form.Group>
+                <div className="footPrint">Z</div>
 
                 <Form.Group className="container-habitatGoalAmn">
-                    <Form.Label>Habitat Goal Amount:</Form.Label>
+                    <Form.Label className="custom-form-label">Habitat Goal Amount:</Form.Label>
                     <Form.Control
                         id="habitatAmount"
                         type="number"
                         onChange={handleIntegerInputChange}
                     />
                 </Form.Group>
-
+                <div className="footPrint">H</div>
                 <Form.Group className="container-exhibitGoalAmn">
-                    <Form.Label>Exhibit Goal Amount:</Form.Label>
+                    <Form.Label className="custom-form-label">Exhibit Goal Amount:</Form.Label>
                     <Form.Control
                         id="exhibitAmount"
                         type="number"
                         onChange={handleIntegerInputChange}
                     />
                 </Form.Group>
-
+                <div className="footPrint">Y</div>
                 <Form.Group className="container-zooMap">
-                    <Form.Label>Select Zoo Map:</Form.Label>
+                    <Form.Label className="custom-form-label">Select Zoo Map:</Form.Label>
                     <div className="mapContainer">
                         {maps.map((mapObj) => (
                             <MapRadio
@@ -158,12 +160,12 @@ export const GoalMain = ({ user }) => {
                         ))}
                     </div>
                 </Form.Group>
-
+                <div className="footPrint">C</div>
                 <Button className="btnContinueGoal" type="submit">
                     Continue
                 </Button>
             </Form>
         </div>
-    );
+    </>);
 }
 

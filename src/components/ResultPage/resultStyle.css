@@ -5,32 +5,50 @@
     height: 65vh !important;
 }
 
+.footPrintFont {
+    font-family: 'animaltracksregular';
+    font-size: 50px;
+    color: rgba(74, 179, 160, 0.432);
+    letter-spacing: 13px;
+    margin-top: -10px;
+    margin-bottom: -80px;
+}
+
+.animalSilFont {
+    display: flex;
+    justify-content: center;
+    font-family: 'afrika_wildlife_b_mammals2Rg';
+    font-size: 45px;
+    margin-bottom: -15px;
+    color: rgba(20, 182, 106, 0.208);
+}
+
 .buttonResultToggle {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    padding-top: 35px !important;
+    padding-top: -35px !important;
     padding-bottom: 50px !important;
 }
 
 .ResultButton {
     display: flex !important;
-    justify-content: center !important;
+    background-color: rgba(52, 136, 129, 0.699) !important;
     align-items: center !important;
-    background-color: #339767c8 !important;
+    padding: 5px 20px !important;
+    border-radius: 8px !important;
     border: none !important;
-    color: #fff !important;
-    font-size: 20px !important;
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-    padding: 15px 30px !important;
-    border-radius: 15px !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-    transition: background-color 0.3s ease-in-out !important;
+    color: rgb(185, 252, 221) !important;
+    font-family: 'end_of_anthropoceneregular' !important;
+    font-size: 50.9px !important;
+    text-shadow: 2px 2px 7px #CDF4D1 !important;
+    letter-spacing: 5.5px !important;
+    -webkit-box-shadow: 5px 5px 15px 5px #0000006c !important;
+    box-shadow: 5px 5px 15px 5px #00000046 !important;
 }
 
 .ResultButton:hover {
-    background-color: #1fe5c497 !important;
+    background-color: rgba(92, 146, 119, 0.705) !important;
     cursor: pointer !important;
 }
 
@@ -47,7 +65,7 @@
 .transparentCard {
     background-color: transparent !important;
     border: none !important;
-    margin-left: 40.5% !important;
+    margin-left: 40% !important;
     text-align: center;
 }
 
@@ -60,21 +78,25 @@
 
 .col-custom {
     width: 25% !important;
-    margin-top: -40px !important;
+    margin-top: -30px !important;
     text-align: center;
+    margin-bottom: -55px;
 }
 
 .card-custom--result {
-    background-color: rgba(117, 161, 126, 0.748) !important;
+    background-color: #3e705785 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     padding: 5px !important;
     margin: 60px !important;
     text-align: center;
 }
 
 .card-body-custom {
-    overflow-wrap: break-word !important;
+    text-shadow: 2px 2px 4px rgba(189, 241, 211, 0.58);
     margin: 0 !important;
     padding: 5px !important;
+    font-family: 'immortalregular', Courier, monospace;
+    font-size: 17px;
     text-align: center;
 }
 

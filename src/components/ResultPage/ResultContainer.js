@@ -1,7 +1,10 @@
+// Import necessary dependencies and components
 import { useEffect, useState } from 'react';
 import { ChoicesComponent } from './ChoicesComponent';
 
+// Define the ResultContainer functional component that takes a 'user' prop
 export const ResultContainer = ({ user }) => {
+    // Initialize necessary states
     const [choices, setChoices] = useState([]);
     const [gameModes, setGameModes] = useState([]);
     const [maps, setMaps] = useState([]);
@@ -9,6 +12,7 @@ export const ResultContainer = ({ user }) => {
     const [exhibits, setExhibits] = useState([]);
     const [selectedChoice, setSelectedChoice] = useState([]);
 
+    // Fetch user choices when the 'user.id' changes
     useEffect(() => {
         const fetchUserChoices = async () => {
             const response = await fetch(`http://localhost:8088/choices?userId=${user.id}`);
@@ -19,6 +23,7 @@ export const ResultContainer = ({ user }) => {
         fetchUserChoices();
     }, [user.id]);
 
+    // Fetch game modes on component mount
     useEffect(() => {
         const fetchGameModes = async () => {
             const response = await fetch('http://localhost:8088/gameModes');
@@ -29,6 +34,7 @@ export const ResultContainer = ({ user }) => {
         fetchGameModes();
     }, []);
 
+    // Fetch maps on component mount
     useEffect(() => {
         const fetchMaps = async () => {
             const response = await fetch('http://localhost:8088/maps');
@@ -39,6 +45,7 @@ export const ResultContainer = ({ user }) => {
         fetchMaps();
     }, []);
 
+    // Set the selected choice when 'choices' or 'user.id' changes
     useEffect(() => {
         if (choices) {
             const foundChoice = choices.find(choice => choice.userId === user.id);
@@ -46,6 +53,7 @@ export const ResultContainer = ({ user }) => {
         }
     }, [choices, user.id]);
 
+    // Render the ChoicesComponent and pass necessary props
     return (
         <ChoicesComponent
             choices={choices}
