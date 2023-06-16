@@ -5,6 +5,16 @@
     padding-top: 59px;
     margin-bottom: -18px;
 }
+
+.animalSilFontText {
+    display: flex;
+    justify-content: center;
+    font-family: 'afrika_wildlife_b_mammals2Rg';
+    color: rgba(20, 182, 106, 0.208);
+    font-size: 45px;
+    margin-bottom: -36.7px;
+    margin-top: -28px;
+}
 .containerGoal {
     display: flex !important;
     justify-content: center !important;

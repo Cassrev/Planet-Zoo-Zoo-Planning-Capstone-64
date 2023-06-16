@@ -110,7 +110,8 @@ export const GoalMain = ({ user }) => {
         setChoice(copyOfUserChoices);
     };
 
-    return (
+    return (<>
+    <div className="animalSilFontText">YWDBlPoZvMg</div>
         <div className="containerGoal">
             <Form className="form--post" id="my_form" onSubmit={handleSaveButtonClick}>
                 <Form.Group className="container-gameMode">
@@ -165,6 +166,6 @@ export const GoalMain = ({ user }) => {
                 </Button>
             </Form>
         </div>
-    );
+    </>);
 }
 

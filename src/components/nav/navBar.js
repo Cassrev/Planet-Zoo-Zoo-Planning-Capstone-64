@@ -1,35 +1,45 @@
-import { Link, useNavigate } from "react-router-dom"
-import "./navBar.css"
+import { Link, useNavigate } from "react-router-dom";
+import useSound from 'use-sound';
+import close_mouth_to_eat from '../../sound/close_mouth_to_eat.mp3';
+import { useState } from 'react'; // Import the useState hook
+import "./navBar.css";
 
 export const LocalNavBar = () => {
-    // The useNavigate hook allows us to programmatically navigate between different routes
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [play, { stop }] = useSound(close_mouth_to_eat, { volume: 3.5 });
+    const [isHovering, setIsHovering] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+        play(); // Play the sound effect when hovering begins
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+        stop(); // Stop the sound effect when hovering ends
+    };
 
     return (
         <ul className="navbar">
-            
-            {/* Conditional rendering based on the presence of a user in local storage */}
             {localStorage.getItem("sitePZ_user") ? (
-                // If there is a user in local storage, display the Logout link
                 <li className="navbar__item navbar__logout">
                     <Link
                         className="navbar__link"
                         to=""
                         onClick={() => {
-                            // Remove the user from local storage
                             localStorage.removeItem("sitePZ_user");
-                            // Navigate to the home page (replace the current URL)
                             navigate("/", { replace: true });
                         }}
-                        style={{ textDecoration: "none" }} // Add this line
+                        onMouseEnter={handleMouseEnter} // Call the event handler on mouse enter
+                        onMouseLeave={handleMouseLeave} // Call the event handler on mouse leave
+                        style={{ textDecoration: "none" }}
                     >
                         Logout
                     </Link>
                 </li>
             ) : (
-                // If there is no user in local storage, display an empty string (nothing)
                 ""
             )}
         </ul>
     );
-}
+};
