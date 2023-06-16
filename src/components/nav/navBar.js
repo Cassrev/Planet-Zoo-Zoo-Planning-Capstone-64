@@ -6,7 +6,7 @@ import "./navBar.css";
 
 export const LocalNavBar = () => {
     const navigate = useNavigate();
-    const [play, { stop }] = useSound(close_mouth_to_eat, { volume: 3.5 });
+    const [play, { stop }] = useSound(close_mouth_to_eat, { volume: 3.5, preload: true });
     const [isHovering, setIsHovering] = useState(false);
 
     const handleMouseEnter = () => {

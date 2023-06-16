@@ -12,9 +12,9 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
     // Initialize necessary states and hooks
     const navigate = useNavigate();
 
-    const [playActive] = useSound(mouth_09_pop, { volume: 0.25 });
-    const [playOn] = useSound(mouth_09_pop, { volume: 0.25 });
-    const [playOff] = useSound(mouth_09_pop, { volume: 0.25 });
+    const [playActive] = useSound(mouth_09_pop, { volume: 0.25, preload: true });
+    const [playOn] = useSound(mouth_09_pop, { volume: 0.25, preload: true });
+    const [playOff] = useSound(mouth_09_pop, { volume: 0.25, preload: true });
 
     const handleDeleteChoice = (choiceId) => {
         // Delete the choice by making a DELETE request to the API

@@ -153,3 +153,29 @@
   margin-top: 498px;
   margin-left: 1595px;
 }
+
+.profile-icon-preview.custom {
+  width: 150px !important;
+  height: 130px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
+  background-color: transparent !important;
+}
+
+.dropdown-preview .dropdown-menu.custom {
+  width: 100px !important;
+  padding: 5px !important;
+  border: none !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !important;
+  background-color: transparent !important;
+}
+
+.dropdown-preview .dropdown-item.custom {
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.dropdown-preview .dropdown-item.custom:hover {
+  background-color: transparent !important;
+}
