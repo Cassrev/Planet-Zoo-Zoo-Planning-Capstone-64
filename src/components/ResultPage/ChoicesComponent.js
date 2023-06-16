@@ -126,7 +126,7 @@ export const ChoicesComponent = ({ choices, gameModes, maps }) => {
 
                                         <Collapse in={isShown}>
                                             {/* Render a div */}
-                                            <div className="footPrintFont">aAbBcCdlLmMnNoOqQRtzZvVkKuUpPzEe</div>
+                                            <div className="footPrintFont">aAbBcCdlLmMnNoOqQRtzZvVkKuUpPzE</div>
                                         </Collapse>
                                     </div>
                                 </li>

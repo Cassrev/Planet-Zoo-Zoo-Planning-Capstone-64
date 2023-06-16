@@ -126,6 +126,7 @@ export const GoalMain = ({ user }) => {
                         ))}
                     </div>
                 </Form.Group>
+                <div className="footPrint">Z</div>
 
                 <Form.Group className="container-habitatGoalAmn">
                     <Form.Label className="custom-form-label">Habitat Goal Amount:</Form.Label>
@@ -135,7 +136,7 @@ export const GoalMain = ({ user }) => {
                         onChange={handleIntegerInputChange}
                     />
                 </Form.Group>
-
+                <div className="footPrint">H</div>
                 <Form.Group className="container-exhibitGoalAmn">
                     <Form.Label className="custom-form-label">Exhibit Goal Amount:</Form.Label>
                     <Form.Control
@@ -144,7 +145,7 @@ export const GoalMain = ({ user }) => {
                         onChange={handleIntegerInputChange}
                     />
                 </Form.Group>
-
+                <div className="footPrint">Y</div>
                 <Form.Group className="container-zooMap">
                     <Form.Label className="custom-form-label">Select Zoo Map:</Form.Label>
                     <div className="mapContainer">
@@ -158,7 +159,7 @@ export const GoalMain = ({ user }) => {
                         ))}
                     </div>
                 </Form.Group>
-
+                <div className="footPrint">C</div>
                 <Button className="btnContinueGoal" type="submit">
                     Continue
                 </Button>

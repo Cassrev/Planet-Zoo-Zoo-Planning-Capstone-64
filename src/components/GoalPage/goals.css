@@ -1,3 +1,10 @@
+.footPrint {
+    font-family: 'animaltracksregular';
+    color: rgba(120, 156, 181, 0.303);
+    font-size: 48.5px;
+    padding-top: 59px;
+    margin-bottom: -18px;
+}
 .containerGoal {
     display: flex !important;
     justify-content: center !important;
@@ -7,16 +14,14 @@
 
 .form--post {
     width: 100% !important;
-    max-width: 740px !important;
-    padding: 20px !important;
+    max-width: 790px !important;
+    padding: 5px !important;
     background-color: #3e705785 !important;
     border-radius: 4px !important;
     display: flex !important;
     flex-direction: column !important;
-    /* Changed to column */
     justify-content: center !important;
     align-items: center !important;
-    /* Added align-items */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
@@ -25,6 +30,7 @@
     justify-content: center !important;
     align-items: center !important;
     font-family: 'im_fell_english_proregular';
+    color: #16191dac;
     font-size: 45px;
     margin-bottom: -5px;
 }
@@ -43,18 +49,15 @@
 .mapContainer {
     display: flex !important;
     flex-direction: row !important;
-    /* Changed to row */
     align-items: center !important;
-    /* Added align-items */
     justify-content: space-between !important;
-    /* Added justify-content */
+
 }
 
 .inputContainer {
     display: flex !important;
     align-items: center !important;
-    margin-bottom: 10px !important;
-    /* Added margin-bottom */
+
 }
 
 .input {
@@ -114,5 +117,5 @@
 .container-habitatGoalAmn,
 .container-exhibitGoalAmn,
 .container-zooMap {
-    margin-bottom: 35px;
+    margin-bottom: -65px;
 }

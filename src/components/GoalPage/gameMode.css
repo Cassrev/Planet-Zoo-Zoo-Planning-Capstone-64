@@ -1,6 +1,67 @@
+/* gameMode.css */
+
+.radio {
+    margin-bottom: 10px;
+}
+
 .modeLabel {
-    margin-right: 25px !important;
-    margin-left: 20px !important;
-    font-size: 23px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     font-family: 'immortalregular', Courier, monospace;
+    font-size: 23px;
+    color: #8ab995bb;
+}
+
+input[type="radio"] {
+    appearance: none;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #c2f2ff;
+    margin-right: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Style the radio button when it is checked */
+input[type="radio"]:checked {
+    border-color: #62b89bf3;
+}
+
+/* Style the dot inside the radio button */
+input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #77fc94;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Show the dot inside the radio button when it is checked */
+input[type="radio"]:checked::before {
+    opacity: 1;
+}
+
+/* Style the text next to the radio button */
+.modeLabel span {
+    font-size: 16px;
+}
+
+/* Animation for radio button on hover */
+input[type="radio"]:hover {
+    transform: scale(1.2);
+}
+
+/* Animation for radio button on click */
+input[type="radio"]:active {
+    transform: scale(0.8);
 }
