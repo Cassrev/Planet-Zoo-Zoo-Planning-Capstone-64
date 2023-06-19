@@ -161,6 +161,7 @@ export const LoginRegister = () => {
 									<Nav.Item className="nav-item-custom">
 										<Nav.Link eventKey="pills-login" className="custom-link nav-link-custom">Login</Nav.Link>
 									</Nav.Item>
+									<div className="pawFootText">E</div>
 									<Nav.Item className="nav-item-custom">
 										<Nav.Link eventKey="pills-register" className="custom-link nav-link-custom">Register</Nav.Link>
 									</Nav.Item>
@@ -232,16 +233,19 @@ export const LoginRegister = () => {
 														onChange={(e) => updateUser(e, "profileIcon")}
 														className="custom"
 													/>
-													<Dropdown>
-														<Dropdown.Toggle variant="secondary" id="dropdown-preview">
-															Preview
-														</Dropdown.Toggle>
-														<Dropdown.Menu>
-															<Dropdown.Item className="dropDownItemPrev">
-																<img src={previewIcon} alt="Profile Icon" className="profile-icon-preview custom" />
-															</Dropdown.Item>
-														</Dropdown.Menu>
-													</Dropdown>
+													{/* Show the preview dropdown only if the profileIcon value is not empty */}
+													{profileIcon !== "" && (
+														<Dropdown>
+															<Dropdown.Toggle variant="secondary" id="dropdown-preview">
+																Preview
+															</Dropdown.Toggle>
+															<Dropdown.Menu>
+																<Dropdown.Item className="dropDownItemPrev">
+																	<img src={previewIcon} alt="Profile Icon" className="profile-icon-preview custom" />
+																</Dropdown.Item>
+															</Dropdown.Menu>
+														</Dropdown>
+													)}
 												</div>
 											</Form.Group>
 											{/* Button to register a new user */}

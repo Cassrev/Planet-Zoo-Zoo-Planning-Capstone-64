@@ -8,3 +8,9 @@
     letter-spacing: 8px;
     color: rgba(20, 182, 106, 0.208);
 }
+
+.pawFootText {
+    font-family: 'animaltracksregular';
+    font-size: 39.9px;
+    color: rgba(120, 156, 181, 0.303);
+}
