@@ -1,0 +1,33 @@
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.lionRunLoading {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    animation: arc 6s linear infinite;
+}
+
+@keyframes arc {
+    0% {
+        left: -7.4%;
+    }
+
+    50% {
+        left: 50%;
+    }
+
+    100% {
+        left: 208%;
+    }
+}
