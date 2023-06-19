@@ -10,7 +10,6 @@ MapRadio receives three parent props:
 > handleIntegerInputChange: A function that handles changes when this radio button is selected. The function is destructured, so handleIntegerInputChange directly references this prop.
 */
 
-
 export const MapRadio = ({ mapObj, choices, handleIntegerInputChange }) => {
     return (
         <div key={mapObj.id} className="radio">

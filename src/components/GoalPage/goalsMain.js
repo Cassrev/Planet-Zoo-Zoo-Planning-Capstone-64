@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { GameModeRadio } from "./GameModeRadio";
 import { MapRadio } from "./MapRadio";
 import { Form, Row, Col, Button } from 'react-bootstrap';
+import { LoadingScreen } from "../loadingScreen/LoadingScreen";
 import "./goals.css"
 
 /* 
@@ -10,6 +11,7 @@ GoalMain accepts and destructure prop object: user from LocalView(Parent)
 */
 export const GoalMain = ({ user }) => {
     const navigate = useNavigate();
+    const [isLoading, setLoading] = useState(false); // State variable for loading status
 
     const [gameMode, setGameMode] = useState([]); // State variable for game mode
     // The value of gameMode will be stored in the state, and setGameMode is a function to update that state
@@ -62,12 +64,19 @@ export const GoalMain = ({ user }) => {
     }, []);
 
     // Function that handles the click event on a save button
-    const handleSaveButtonClick = (event) => {
+    const handleSaveButtonClick = async (event) => {
         event.preventDefault(); // Prevents the default form submission behavior
 
         // Check if the form is valid
         if (validateForm()) {
-            // If the form is valid, make a POST request to the server
+            setLoading(true); // Set loading to true to show the loading screen
+
+            // Simulate an asynchronous operation
+            await new Promise((resolve) => setTimeout(resolve, 2000)); // Replace this with your actual asynchronous operation
+
+            setLoading(false); // Set loading back to false when the operation is completed
+
+            // Make a POST request to the server
             fetch("http://localhost:8088/choices", {
                 method: "POST",
                 headers: {
@@ -111,7 +120,9 @@ export const GoalMain = ({ user }) => {
     };
 
     return (<>
-    <div className="animalSilFontText">YWDBlPoZvMg</div>
+        {/* Render the loading screen if isLoading is true */}
+        {isLoading && <LoadingScreen />}
+        <div className="animalSilFontText">YWDBlPoZvMg</div>
         <div className="containerGoal">
             <Form className="form--post" id="my_form" onSubmit={handleSaveButtonClick}>
                 <Form.Group className="container-gameMode">

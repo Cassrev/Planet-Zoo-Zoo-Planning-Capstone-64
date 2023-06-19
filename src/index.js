@@ -11,6 +11,6 @@ const root = createRoot(container) // Creating a root using the 'container' elem
 
 root.render( // Rendering JSX code inside the root element
 	<BrowserRouter> {/*Wrapping the component inside 'BrowserRouter'*/}
-		<PlanetZooApp /> {/*Rendering the 'Repairs' component */}
+		<PlanetZooApp /> {/*Rendering the 'PlanetZooApp' component */}
 	</BrowserRouter>
 )

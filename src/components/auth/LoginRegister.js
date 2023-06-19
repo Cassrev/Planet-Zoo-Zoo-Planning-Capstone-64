@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col, Nav, Tab, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Nav, Tab, Form, Button, Dropdown } from 'react-bootstrap';
 import useSound from 'use-sound';
 import mouth_09_pop from '../../sound/mouth_09_pop.mp3';
 import "./customLog.css";
@@ -19,9 +19,9 @@ export const LoginRegister = () => {
 	const [previewIcon, setPreviewIcon] = useState("");
 
 
-	const [playActive] = useSound(mouth_09_pop, { volume: 0.25 });
-	const [playOn] = useSound(mouth_09_pop, { volume: 0.25 });
-	const [playOff] = useSound(mouth_09_pop, { volume: 0.25 });
+	const [playActive] = useSound(mouth_09_pop, { volume: 0.25, preload: true });
+	const [playOn] = useSound(mouth_09_pop, { volume: 0.25, preload: true });
+	const [playOff] = useSound(mouth_09_pop, { volume: 0.25, preload: true });
 
 	/* 
 	!What is the point of the useNavigate hook?
@@ -65,6 +65,13 @@ export const LoginRegister = () => {
 	// Handles the registration process when the registration form is submitted
 	const handleRegister = (e) => {
 		e.preventDefault();
+
+		// Check if any required fields are empty
+		if (userName === "" || passWord === "" || profileIcon === "") {
+			// Display an error message if any required fields are empty
+			window.alert("Please fill out all fields");
+			return;
+		}
 
 		// Check if the username is already taken
 		return fetch(`http://localhost:8088/accounts?userName=${userName}`)
@@ -154,6 +161,7 @@ export const LoginRegister = () => {
 									<Nav.Item className="nav-item-custom">
 										<Nav.Link eventKey="pills-login" className="custom-link nav-link-custom">Login</Nav.Link>
 									</Nav.Item>
+									<div className="pawFootText">E</div>
 									<Nav.Item className="nav-item-custom">
 										<Nav.Link eventKey="pills-register" className="custom-link nav-link-custom">Register</Nav.Link>
 									</Nav.Item>
@@ -213,23 +221,33 @@ export const LoginRegister = () => {
 													onChange={(e) => setPassword(e.target.value)}
 												/>
 											</Form.Group>
-											{/* Input field for profile icon link */}
-											<Form.Group className="mb-4">
-												<Form.Control
-													type="text"
-													id="profileIcon"
-													placeholder="Profile Icon Link"
-													value={profileIcon}
-													onChange={(e) => updateUser(e, "profileIcon")}
-												/>
-											</Form.Group>
+
 											{/* Preview of the profile icon */}
-											{previewIcon && (
-												<div className="mb-4">
-													<p>Preview:</p>
-													<img src={previewIcon} alt="Profile Icon" style={{ maxWidth: "100px" }} />
+											<Form.Group className="mb-4">
+												<div className="d-flex align-items-center">
+													<Form.Control
+														type="text"
+														id="profileIcon"
+														placeholder="Profile Icon Link"
+														value={profileIcon}
+														onChange={(e) => updateUser(e, "profileIcon")}
+														className="custom"
+													/>
+													{/* Show the preview dropdown only if the profileIcon value is not empty */}
+													{profileIcon !== "" && (
+														<Dropdown>
+															<Dropdown.Toggle variant="secondary" id="dropdown-preview">
+																Preview
+															</Dropdown.Toggle>
+															<Dropdown.Menu>
+																<Dropdown.Item className="dropDownItemPrev">
+																	<img src={previewIcon} alt="Profile Icon" className="profile-icon-preview custom" />
+																</Dropdown.Item>
+															</Dropdown.Menu>
+														</Dropdown>
+													)}
 												</div>
-											)}
+											</Form.Group>
 											{/* Button to register a new user */}
 											<Button
 												variant="primary"
